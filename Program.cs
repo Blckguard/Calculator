@@ -17,7 +17,10 @@ class Solution
 {
     public static void Main(string[] args)
     {
-        Calculator.CalculateOutput();
-        Console.ReadLine();
+        while (!CommandHandler.QuitStatus)
+        {
+            CommandHandler.PrintResult();
+        }
+        
     }
 }

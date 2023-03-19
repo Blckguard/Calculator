@@ -1,0 +1,8 @@
+C:\Users\candy\repos\c#-practice\Calculator\bin\Debug\Program1.exe.config
+C:\Users\candy\repos\c#-practice\Calculator\bin\Debug\Program1.exe
+C:\Users\candy\repos\c#-practice\Calculator\bin\Debug\Program1.pdb
+C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Program1.exe
+C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Program1.pdb

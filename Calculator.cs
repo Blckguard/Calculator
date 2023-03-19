@@ -8,40 +8,15 @@ namespace Program1
 {
     internal class Calculator
     {
-        private static int num1 { get; set; }
-        private static int num2 { get; set; }
-        private static string inputOperator { get; set; }
-
-        private static void GetInput()
+        public static int AddNumbers(List<int> numbers)
         {
-            Console.Write("Type the first operand: ");
-            num1 = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Type the operator: ");
-            inputOperator = Console.ReadLine();
-            Console.Write("Type the second operand: ");
-            num2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-        }
+            int result = 0;
 
-        public static void CalculateOutput()
-        {
-            GetInput();
-
-            switch (inputOperator)
+            foreach (int number in numbers)
             {
-                case "+":
-                    Console.WriteLine(num1 + num2);
-                    break;
-                case "-":
-                    Console.WriteLine(num1 - num2);
-                    break;
-                case "*":
-                    Console.WriteLine(num1 * num2);
-                    break;
-                case "/":
-                    Console.WriteLine(Convert.ToInt32(num1 / num2));
-                    break;
+                result += number;
             }
+            return result;
         }
     }
 }

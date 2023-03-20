@@ -9,21 +9,26 @@ namespace Program1
 {
     internal class CommandHandler
     {
-        private string CurrentCommand { get; set; }
+        private string Command { get; set; }
         private List<int> Numbers = new() { };
         private string Flag { get; set; }
-        public static bool QuitStatus = false;
+        public static bool Quit = false;
 
         public void SplitCommand()
         {
             string currentInput = Console.ReadLine();
             string[] buffer = currentInput.Split(' ');
-            string[] numBuffer = new string[buffer.Length - 1];
+            string[] numBuffer;
 
-            CurrentCommand = buffer[0];
-            if (buffer.Last().StartsWith("-"))
+            Command = buffer[0];
+            if (buffer.Last() == "-f")
             {
                 Flag = buffer.Last();
+                numBuffer = new string[buffer.Length - 2];
+            }
+            else
+            {
+                numBuffer = new string[buffer.Length - 1];
             }
             
             Array.Copy(buffer, 1, numBuffer, 0, numBuffer.Length);
@@ -35,24 +40,33 @@ namespace Program1
             }
         }
 
-        public int HandleCommand()
+        public void ExecuteCommand()
         {
-            if (CurrentCommand == "add") 
+            switch (Command)
             {
-                return Calculator.AddNumbers(Numbers);
+                case "add":
+                    Console.WriteLine(Calculator.AddNumbers(Numbers));
+                    break;
+                case "subtract":
+                    Console.WriteLine(Calculator.SubtractNumbers(Numbers));
+                    break;
+                case "multiply":
+                    Console.WriteLine(Calculator.MultiplyNumbers(Numbers));
+                    break;
+                case "quit":
+                    Quit = true;
+                    break;
+                default:
+                    Console.WriteLine("not a recognized command.");
+                    break;
             }
-            if (CurrentCommand == "quit")
-            {
-                QuitStatus = true;
-            }
-            return 0;
         }
 
-        public static void PrintResult()
+        public static void Run()
         {
             CommandHandler commandHandler = new CommandHandler();
             commandHandler.SplitCommand();
-            Console.WriteLine(commandHandler.HandleCommand());
+            commandHandler.ExecuteCommand();
         }
     }
 }

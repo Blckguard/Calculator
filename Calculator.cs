@@ -18,5 +18,25 @@ namespace Program1
             }
             return result;
         }
+        public static int SubtractNumbers(List<int> numbers)
+        {
+            int result = numbers[0];
+            
+            for (int i = 1; i < numbers.Count(); i++)
+            {
+                result -= numbers[i];
+            }
+            return result;
+        }
+        public static int MultiplyNumbers(List<int> numbers)
+        {
+            int result = numbers[0];
+
+            for (int i = 1; i < numbers.Count(); i++)
+            {
+                result = result * numbers[i];
+            }
+            return result;
+        }
     }
 }

@@ -17,9 +17,9 @@ class Solution
 {
     public static void Main(string[] args)
     {
-        while (!CommandHandler.QuitStatus)
+        while (!CommandHandler.Quit)
         {
-            CommandHandler.PrintResult();
+            CommandHandler.Run();
         }
         
     }

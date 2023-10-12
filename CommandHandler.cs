@@ -10,33 +10,28 @@ namespace Program1
     internal class CommandHandler
     {
         private string Command { get; set; }
-        private List<int> Numbers = new() { };
-        private string Flag { get; set; }
+        private List<double> Numbers = new() { };
+        private List<string> Operators = new() { };
         public static bool Quit = false;
 
         public void SplitCommand()
         {
             string currentInput = Console.ReadLine();
-            string[] buffer = currentInput.Split(' ');
-            string[] numBuffer;
-
-            Command = buffer[0];
-            if (buffer.Last() == "-f")
-            {
-                Flag = buffer.Last();
-                numBuffer = new string[buffer.Length - 2];
-            }
-            else
-            {
-                numBuffer = new string[buffer.Length - 1];
-            }
+            char[] operatorChars = new char[4] { '+', '-', '*', '/' };
+            string[] splitInput = currentInput.Split(' ');
+            string[] splitNumbers = splitInput[1].Trim().Split(operatorChars);
+            Command = splitInput[0];
             
-            Array.Copy(buffer, 1, numBuffer, 0, numBuffer.Length);
-
-            foreach (string strNumber in numBuffer)
+            foreach (string character in splitNumbers)
             {
-                int number = int.Parse(strNumber);
-                Numbers.Add(number);
+                if (character == "+" || character == "-" || character == "*" || character == "/")
+                {
+                    Operators.Add(character);
+                }
+                else
+                {
+                    Numbers.Add(double.Parse(character));
+                }
             }
         }
 
@@ -44,14 +39,8 @@ namespace Program1
         {
             switch (Command)
             {
-                case "add":
-                    Console.WriteLine(Calculator.AddNumbers(Numbers));
-                    break;
-                case "subtract":
-                    Console.WriteLine(Calculator.SubtractNumbers(Numbers));
-                    break;
-                case "multiply":
-                    Console.WriteLine(Calculator.MultiplyNumbers(Numbers));
+                case "calc":
+                    Operator.Calculate();
                     break;
                 case "quit":
                     Quit = true;

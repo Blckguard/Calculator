@@ -6,3 +6,8 @@ C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Calculator.csproj.Suggeste
 C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Program1.exe
 C:\Users\candy\repos\c#-practice\Calculator\obj\Debug\Program1.pdb
+C:\Users\maxim\repos\Calculator\obj\Debug\Calculator.csproj.AssemblyReference.cache
+C:\Users\maxim\repos\Calculator\obj\Debug\Calculator.csproj.SuggestedBindingRedirects.cache
+C:\Users\maxim\repos\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\maxim\repos\Calculator\obj\Debug\Program1.exe
+C:\Users\maxim\repos\Calculator\obj\Debug\Program1.pdb

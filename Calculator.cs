@@ -5,38 +5,49 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Program1
-{
-    internal class Calculator
+{ 
+    interface IMathOperation
     {
-        public static int AddNumbers(List<int> numbers)
-        {
-            int result = 0;
+        double Calculate(double leftOperand, double rightOperand);
+    }
 
-            foreach (int number in numbers)
-            {
-                result += number;
-            }
-            return result;
-        }
-        public static int SubtractNumbers(List<int> numbers)
+    internal class Addition : IMathOperation
+    {
+        public static Addition NewInstance()
         {
-            int result = numbers[0];
-            
-            for (int i = 1; i < numbers.Count(); i++)
-            {
-                result -= numbers[i];
-            }
-            return result;
+            return new Addition();
         }
-        public static int MultiplyNumbers(List<int> numbers)
+        public double Calculate(double leftOperand, double rightOperand)
         {
-            int result = numbers[0];
+            return leftOperand + rightOperand;
+        }
+    }
 
-            for (int i = 1; i < numbers.Count(); i++)
-            {
-                result = result * numbers[i];
-            }
-            return result;
+    internal class Subtraction : IMathOperation
+    {
+        public static Subtraction NewInstance()
+        {
+            return new Subtraction();
+        }
+        public double Calculate(double leftOperand, double rightOperand)
+        {
+            return leftOperand - rightOperand;
+        }
+    }
+
+    internal class Multiplication : IMathOperation
+    {
+        public double Calculate(double leftOperand, double rightOperand)
+        {
+            return leftOperand * rightOperand;
+        }
+    }
+
+    internal class Division : IMathOperation
+    {
+        public double Calculate(double leftOperand, double rightOperand)
+        {
+            return leftOperand / rightOperand;
         }
     }
 }
